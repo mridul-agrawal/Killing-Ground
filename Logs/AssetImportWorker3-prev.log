@@ -1,0 +1,141 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.0f1 (3721df5a8b28) revision 3613151'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 8092 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\UNITY\2020.2.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/UNITY/Killing Ground
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+62504
+Successfully changed project path to: D:/UNITY/Killing Ground
+D:/UNITY/Killing Ground
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 34.32 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.0f1 (3721df5a8b28)
+[Subsystems] Discovering subsystems at path D:/UNITY/2020.2.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/UNITY/Killing Ground/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940MX (ID=0x134d)
+    Vendor:   
+    VRAM:     4065 MB
+    Driver:   22.21.13.8264
+Initialize mono
+Mono path[0] = 'D:/UNITY/2020.2.0f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UNITY/2020.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/UNITY/2020.2.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56500
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UNITY/2020.2.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/UNITY/2020.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001494 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 38.13 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 19.103 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003242 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.205 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1099 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.0 MB.
+System memory in use after: 57.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1544.
+Total: 2.270000 ms (FindLiveObjects: 0.136500 ms CreateObjectMapping: 0.094300 ms MarkObjects: 1.878600 ms  DeleteObjects: 0.157600 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/CameraController.cs
+  artifactKey: Guid(9eb76722eccceee46aa3c1d680249f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CameraController.cs using Guid(9eb76722eccceee46aa3c1d680249f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5927376e2ba867ad39adee7b4fb2b0a') in 2.674123 seconds
+  Import took 3.551416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 282.605976 seconds.
+  path: Assets/Scripts/EnemySpawner.cs
+  artifactKey: Guid(f89027f42fb455f4d888aafdc0c08254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemySpawner.cs using Guid(f89027f42fb455f4d888aafdc0c08254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef499bb6302716d1ecf89710ced1b79f') in 0.002783 seconds
+  Import took 0.129685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.621354 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(623c7da9b27663545a6e10646bc82c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(623c7da9b27663545a6e10646bc82c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '699c651d6068e299f7b91a09d2f14bff') in 0.038276 seconds
+  Import took 0.167847 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.213272 seconds.
+  path: Assets/Scripts/Telekinesis.cs
+  artifactKey: Guid(1aaab818eba889b4cb7e9ce988785e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Telekinesis.cs using Guid(1aaab818eba889b4cb7e9ce988785e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a4ebf2969d9373e38bc713ce9a8151') in 0.005854 seconds
+  Import took 0.132222 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1183.449790 seconds.
+  path: Assets/EXTERNAL ASSETS/Zombie/Animations
+  artifactKey: Guid(f3eea9b1c7ba62247acf479d69835474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EXTERNAL ASSETS/Zombie/Animations using Guid(f3eea9b1c7ba62247acf479d69835474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '928a7387a08db8225d0e799039585cb4') in 0.004395 seconds
+  Import took 0.016097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.367337 seconds.
+  path: Assets/EXTERNAL ASSETS/Zombie/Animations/Zombie.controller
+  artifactKey: Guid(2ef8e6599b7f9934e8ff0d64c5325a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EXTERNAL ASSETS/Zombie/Animations/Zombie.controller using Guid(2ef8e6599b7f9934e8ff0d64c5325a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04363f59352f6331204e742f31164142') in 0.072478 seconds
+  Import took 0.096051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.178622 seconds.
+  path: Assets/EXTERNAL ASSETS/Zombie/Animations/Z_Walk_InPlace.anim
+  artifactKey: Guid(37e6af8636979e04086967e3bd667606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EXTERNAL ASSETS/Zombie/Animations/Z_Walk_InPlace.anim using Guid(37e6af8636979e04086967e3bd667606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4be1ad975fd5e59ac86259e885dcf6f') in 0.030494 seconds
+  Import took 0.046075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.061120 seconds.
+  path: Assets/EXTERNAL ASSETS/Zombie/Animations/Z_Walk_InPlace.anim
+  artifactKey: Guid(37e6af8636979e04086967e3bd667606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EXTERNAL ASSETS/Zombie/Animations/Z_Walk_InPlace.anim using Guid(37e6af8636979e04086967e3bd667606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4be1ad975fd5e59ac86259e885dcf6f') in 0.023058 seconds
+  Import took 0.028363 seconds .
+
