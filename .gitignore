@@ -3,7 +3,13 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+[Ll]ogs/
 Assets/AssetStoreTools*
+Assets/ImportedAssets/
+Assets/Terrain/
+Assets/music/
+ProjectSettings/
+
 
 # Visual Studio cache directory
 .vs/

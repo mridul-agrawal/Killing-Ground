@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Telekinesis : MonoBehaviour
 {
@@ -10,10 +11,22 @@ public class Telekinesis : MonoBehaviour
     private Rigidbody boxRigidBody;
     private bool holdsObject;
     private float attractionSpeed = 5f;
-    public float throwForce = 5f;
+    public float throwForce = 0f;
     private float minThrowForce = 2f;
     private float maxThrowForce = 100f;
     private Vector3 rotateVector;
+    public TextMeshProUGUI forceText;
+    public AudioClip PullSound;
+    public AudioClip PushSound;
+    public AudioClip HoldSound;
+    private AudioSource audioSource;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     public void Raycast()
     {
@@ -30,6 +43,8 @@ public class Telekinesis : MonoBehaviour
                 boxRigidBody = heldObject.GetComponent<Rigidbody>();
                 boxRigidBody.constraints = RigidbodyConstraints.FreezeAll;
                 holdsObject = true;
+                audioSource.PlayOneShot(PullSound);
+                audioSource.Play();
             }
         }
     }
@@ -61,7 +76,7 @@ public class Telekinesis : MonoBehaviour
 
         if(Input.GetMouseButton(1))
         {
-            throwForce += 0.2f;
+            throwForce += 0.5f;
         }
 
         if(Input.GetKeyDown(KeyCode.F))
@@ -79,6 +94,7 @@ public class Telekinesis : MonoBehaviour
                 MoveObjectToPosition();
             }
      */ }
+        forceText.text = throwForce.ToString();
     }
 
     public void ReleaseObject()
@@ -87,14 +103,17 @@ public class Telekinesis : MonoBehaviour
         heldObject.transform.parent = null;
         holdsObject = false;
         heldObject = null;
+        audioSource.Stop();
 
     }
 
     public void ThrowObject()
     {
         throwForce = Mathf.Clamp(throwForce, minThrowForce, maxThrowForce);
-        boxRigidBody.AddForce(Camera.main.transform.forward * throwForce, ForceMode.Impulse);
+        Vector3 throwVector = new Vector3(-0.15f,0.15f,0f);
+        boxRigidBody.AddForce((Camera.main.transform.forward + throwVector) * throwForce, ForceMode.Impulse);
         ReleaseObject();
+        audioSource.PlayOneShot(PushSound);
     }
 
     private void CalculateRotationVector()

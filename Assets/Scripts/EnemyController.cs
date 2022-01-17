@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     public GameObject deathSplash;
     private Animator enemyAnimator;
     private bool canAttack = true;
+    private EnemySpawner enemySpawner;
+    public AudioSource zombieSound;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,18 @@ public class EnemyController : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
         enemyAnimator = GetComponentInChildren<Animator>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
+        zombieSound = GetComponent<AudioSource>();
+        StartCoroutine(PlayRandom());
+    }
+
+    IEnumerator PlayRandom()
+    {
+        while(true)
+        {
+            zombieSound.Play();
+            yield return new WaitForSeconds(Random.Range(4, 10));
+        }
     }
 
     // Update is called once per frame
@@ -34,6 +48,7 @@ public class EnemyController : MonoBehaviour
             {
                 Instantiate(deathSplash, transform.position, Quaternion.identity);
                 GameObject.Destroy(gameObject);
+                enemySpawner.currentEnemies -= 1;
             }
         }
     }

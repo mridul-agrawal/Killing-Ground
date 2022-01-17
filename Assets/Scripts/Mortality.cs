@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 
 public class Mortality : MonoBehaviour
@@ -9,10 +10,14 @@ public class Mortality : MonoBehaviour
     [SerializeField]
     private int health = 100;
     public GameObject deathOverlay;
+    public TextMeshProUGUI hpText;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
 
-    private bool IfAlive()
+
+    private void Start()
     {
-        return health > 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Awake()
@@ -22,35 +27,34 @@ public class Mortality : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if(health>damage)
+        if(health-damage > 0)
         {
-            Debug.Log("Taking Damage:\t" + damage);
-            health = health - damage;
+            health -= damage;
         } else
         {
-            if(IfAlive())
-            {
-                health = 0;
-                Die();
-            }
+            health = 0;
+            Die();
         }
+        hpText.text = health.ToString();
     }
 
     public void Die()
     {
-        Debug.Log("DIE");
         GetComponent<Animator>().SetBool("die",true);
         FindObjectOfType<PlayerController>().enabled = false;
         FindObjectOfType<CameraController>().enabled = false;
         deathOverlay.SetActive(true);
-
+        audioSource.clip = deathSound;
+        audioSource.Play();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Damager"))
         {
-            TakeDamage(10);
+            TakeDamage(5);
         }
     }
 

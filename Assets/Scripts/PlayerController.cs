@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,6 +49,13 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalking", horizontalMove!=0 || verticalMove!=0);
         animator.SetBool("run", currentSpeed == runningSpeed);
 
+    }
+
+
+    public void Restart()
+    {
+        Debug.Log("Inside Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
