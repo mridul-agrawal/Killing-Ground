@@ -15,6 +15,11 @@ namespace KillingGround.Player
         private float gravity = 9.87f;
         private float verticalSpeed = 0f;
 
+        private void Awake()
+        {
+            Mortality.OnPlayerDeath += PlayerDied;
+        }
+
         private void Update()
         {
             Move();
@@ -60,6 +65,13 @@ namespace KillingGround.Player
         {
             animator.SetBool("isWalking", horizontalMove != 0 || verticalMove != 0);
             animator.SetBool("run", currentSpeed == runningSpeed);
+        }
+
+        // Handles Player Death Logic.
+        private void PlayerDied()
+        {
+            animator.SetBool("die", true);
+            this.enabled = false;
         }
 
     }

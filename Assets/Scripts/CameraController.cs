@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using KillingGround.Player;
 
 public class CameraController : MonoBehaviour
 {
@@ -10,6 +8,11 @@ public class CameraController : MonoBehaviour
     public float mouseSensitivity = 2f;
     public float upLimit = -50f;
     public float downLimit = 50f;
+
+    private void Awake()
+    {
+        Mortality.OnPlayerDeath += DisableCameraController;
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,5 +40,10 @@ public class CameraController : MonoBehaviour
         if(currentRotation.x > 180) { currentRotation.x -= 360; }
         currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
         CameraHolderTransform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    private void DisableCameraController()
+    {
+        this.enabled = false;
     }
 }

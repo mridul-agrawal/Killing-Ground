@@ -1,5 +1,6 @@
 using UnityEngine;
 using KillingGround.Utilities;
+using KillingGround.Player;
 using UnityEngine.SceneManagement;
 
 namespace KillingGround.Services
@@ -12,14 +13,21 @@ namespace KillingGround.Services
         protected override void Awake()
         {
             base.Awake();
-            SetUpCursor();
+            LockCursor();
+            Mortality.OnPlayerDeath += ConfineCursor;
         }
 
         // Locks Cursor and makes it invisible at the start of game.
-        private static void SetUpCursor()
+        private static void LockCursor()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+
+        private static void ConfineCursor()
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
 
         // Used to Restart the GameScene.
