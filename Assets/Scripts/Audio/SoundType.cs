@@ -3,6 +3,10 @@
     public enum SoundType
     {
         deathSound,
-        BackGroundSound
+        BackGroundSound,
+        zombieSound,
+        PullSound,
+        PushSound,
+        HoldSound
     }
 }

@@ -1,8 +1,12 @@
 using UnityEngine;
+using KillingGround.Utilities;
 
 namespace KillingGround.Player
 {
-    public class PlayerController : MonoBehaviour
+    /// <summary>
+    /// This class is responsible for controlling the player movement & animation.
+    /// </summary>
+    public class PlayerController : SingletonGeneric<PlayerController>
     {
         // References:
         [SerializeField] private CharacterController CharacterController;
@@ -15,7 +19,7 @@ namespace KillingGround.Player
         private float gravity = 9.87f;
         private float verticalSpeed = 0f;
 
-        private void Awake()
+        protected override void Awake()
         {
             Mortality.OnPlayerDeath += PlayerDied;
         }
